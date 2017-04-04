@@ -80,6 +80,8 @@
         left: 0;
         width: 100%;
         padding: 0 3rem;
+        background-color: white;
+        z-index: 100;
 
         &__header {
 
