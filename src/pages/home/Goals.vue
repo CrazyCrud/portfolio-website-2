@@ -2,6 +2,7 @@
     <section class="main-section goals">
         <div class="main-section__container goals__container">
             <h2 class="main-section__headline goals__headline">{{goalsHeadline}}</h2>
+            <p class="goals__copy">{{goalsCopy}}</p>
         </div>
     </section>
 </template>
@@ -14,7 +15,9 @@
         components: {UiButton},
         data: function() {
             return {
-                goalsHeadline: 'Mein Ziel'
+                goalsHeadline: 'Mein Ziel',
+                goalsCopy: `Ich designe Anwendungen, die nutzbar sind und Spaß machen.
+                Vom Design, Programmieren und Testen mit echten Nutzern übernehme ich alles was ihr Produkt benötigt.`
             }
         }
     }

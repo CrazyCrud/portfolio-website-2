@@ -79,7 +79,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding: 0 3rem;
+        padding: 0 2rem;
         background-color: white;
         z-index: 100;
 
@@ -136,8 +136,8 @@
 
     .main-menu-icon {
         position: relative;
-        width: 65px;
-        height: 45px;
+        width: 34px;
+        height: 24px;
         cursor: pointer;
         @include breakpoint(small) { display: none; };
 
@@ -146,7 +146,7 @@
             position: absolute;
             left: 0;
             width: 100%;
-            height: 10px;
+            height: 6px;
             border-radius: 9px;
             background-color: $black;
         }
@@ -158,12 +158,12 @@
         }
 
         span:nth-child(2) {
-            top: 18px;
+            top: 11px;
             transition: all 0.1s;
         }
 
         span:nth-child(3) {
-            top: 36px;
+            top: 23px;
             transform-origin: left center;
             transition: all 0.2s;
         }

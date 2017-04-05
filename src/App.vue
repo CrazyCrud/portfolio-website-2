@@ -13,10 +13,15 @@
 
 <script>
     import MainMenu from './components/MainMenu';
+    import Utility from './modules/Utility';
 
     export default {
         name: 'app',
-        components: {MainMenu}
+        components: {MainMenu},
+
+        mounted: function() {
+            Utility.setupFadeIn();
+        }
     }
 </script>
 
@@ -26,6 +31,10 @@
 
     @import "./scss/base/all";
     @import "./scss/layout/all";
+    @import "./scss/utils/mixins";
+
+    @include fadeIn();
+
 
     #app {
         .transition-router-enter-active, .transition-router-leave-active {

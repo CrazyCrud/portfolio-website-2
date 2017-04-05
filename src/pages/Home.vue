@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <main-header></main-header>
-        <education></education>
-        <projects></projects>
-        <goals></goals>
-        <contact></contact>
+    <div class="home">
+        <main-header class="home__section"></main-header>
+        <education class="home__section"></education>
+        <projects class="home__section"></projects>
+        <goals class="home__section"></goals>
+        <contact class="home__section"></contact>
     </div>
 </template>
 
@@ -35,4 +35,10 @@
 
     @import "../scss/base/all";
     @import "../scss/layout/all";
+
+    .home {
+        &__section {
+            margin-bottom: modular-scale(5);
+         }
+    }
 </style>

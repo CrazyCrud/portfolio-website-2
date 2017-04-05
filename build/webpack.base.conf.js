@@ -5,7 +5,6 @@ var vueLoaderConfig = require('./vue-loader.conf');
 
 var bourbon = require('bourbon').includePaths;
 var neat = require('bourbon-neat').includePaths;
-var keenUI = require('keen-ui').includePaths;
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -40,7 +39,7 @@ module.exports = {
                 }, {
                     loader: "sass-loader",
                     options: {
-                        includePaths: [bourbon, neat, keenUI]
+                        includePaths: [bourbon, neat]
                     }
                 }]
             },
