@@ -1,10 +1,12 @@
 <template>
     <header class="main-header">
-        <div class="main-header__headline">{{headerHeadline}}</div>
-        <p class="main-header__copy">{{headerCopy}}</p>
-        <router-link to="/was-ich-biete">
-            <ui-button color="primary" size="normal">{{headerButton}}</ui-button>
-        </router-link>
+        <div class="main-header__container">
+            <h1 class="main-header__headline">{{headerHeadline}}</h1>
+            <p class="main-header__copy">{{headerCopy}}</p>
+            <router-link to="/was-ich-biete" class="button-link">
+                <ui-button color="primary" size="normal">{{headerButton}}</ui-button>
+            </router-link>
+        </div>
     </header>
 </template>
 
@@ -24,10 +26,16 @@
     }
 </script>
 
-<sstyle lang="scss">
+<style lang="scss">
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
-    @import "../../scss/base/all";
-    @import "../../scss/layout/all";
-</sstyle>
+    .main-header {
+        &__headline {
+
+        }
+         &__copy {
+        margin-bottom: 0;
+          }
+    }
+</style>

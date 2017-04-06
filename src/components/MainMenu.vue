@@ -2,7 +2,7 @@
     <nav>
         <div class="main-menu">
             <div class="main-menu__header">
-                <div class="main-menu__branding main-menu-branding"><router-link to="/">Constantin</br>Lehenmeier</router-link></div>
+                <div class="main-menu__branding main-menu-branding"><router-link class="main-menu-branding__link" to="/">Constantin</br>Lehenmeier</router-link></div>
                     <div class="main-menu__icon main-menu-icon" v-on:click="onClickMainMenuIcon" v-bind:class="{ 'main-menu-icon--opened': isOpen}">
                         <span></span>
                         <span></span>
@@ -131,7 +131,10 @@
     }
 
     .main-menu-branding {
-
+        &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+         }
     }
 
     .main-menu-icon {
@@ -171,8 +174,8 @@
         &--opened {
             span:nth-child(1) {
                 transform: rotate(45deg);
-                top: -3px;
-                left: 8px;
+                top: -2px;
+                left: 3px;
             }
 
             span:nth-child(2) {
@@ -181,8 +184,8 @@
 
             span:nth-child(3) {
                 transform: rotate(-45deg);
-                top: 42px;
-                left: 8px;
+                top: 22px;
+                left: 3px;
             }
          }
     }

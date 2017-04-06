@@ -30,8 +30,10 @@
     @import "~bourbon-neat/core/neat";
 
     @import "./scss/base/all";
+    @import "./scss/components/all";
     @import "./scss/layout/all";
     @import "./scss/utils/mixins";
+    @import "./scss/utils/functions";
 
     @include fadeIn();
 
@@ -46,7 +48,11 @@
         }
 
         .main {
-            margin-top: 80px;
+            margin-top: em(80, strip-unit($font-size--s)) + modular-scale(3);
+        }
+
+        .button-link {
+            text-decoration: none;
         }
     }
 </style>

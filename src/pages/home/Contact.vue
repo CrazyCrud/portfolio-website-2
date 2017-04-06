@@ -2,7 +2,8 @@
     <section class="main-section contact">
         <div class="main-section__container contact__container">
             <h2 class="main-section__headline contact__headline">{{contactHeadline}}</h2>
-            <router-link to="/kontakt">
+            <p class="contact__copy">{{contactCopy}}</p>
+            <router-link to="/kontakt" class="button-link">
                 <ui-button color="primary" size="normal">{{contactButton}}</ui-button>
             </router-link>
         </div>
@@ -18,6 +19,7 @@
         data: function() {
             return {
                 contactHeadline: 'Kontakt',
+                contactCopy: `Lassen Sie uns über Ihr Projekt sprechen oder erzählen Sie mir ihren besten Witz.`,
                 contactButton: 'Kontaktieren Sie mich'
             }
         }
@@ -27,7 +29,4 @@
 <style lang="scss">
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
-
-    @import "../../scss/base/all";
-    @import "../../scss/layout/all";
 </style>

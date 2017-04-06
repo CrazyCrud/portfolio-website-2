@@ -6,7 +6,7 @@
                 <h5 class="project__title">{{project.title}}</h5>
                 <p class="project_type">{{project.type}}</p>
             </div>
-            <router-link to="/projekte">
+            <router-link to="/projekte" class="button-link">
                 <ui-button color="primary" size="normal">{{projectsButton}}</ui-button>
             </router-link>
         </div>
@@ -44,23 +44,24 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
-    @import "../../scss/base/all";
-    @import "../../scss/layout/all";
-
     .project {
         position: relative;
-        max-width: 70%;
+        max-width: 78%;
         height: 260px;
         background-color: lightslategray;
     }
 
     .project:nth-child(even) {
-        margin-right: 0;
+        margin-right: - modular-scale(1);
         margin-left: auto;
      }
 
     .project:nth-child(odd) {
         margin-right: auto;
-        margin-left: 0;
+        margin-left: - modular-scale(1);
+    }
+
+    .project:last-of-type {
+        margin-bottom: 0;
     }
 </style>

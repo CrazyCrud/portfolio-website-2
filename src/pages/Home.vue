@@ -1,10 +1,10 @@
 <template>
     <div class="home">
-        <main-header class="home__section"></main-header>
-        <education class="home__section"></education>
-        <projects class="home__section"></projects>
-        <goals class="home__section"></goals>
-        <contact class="home__section"></contact>
+        <main-header class="home__section home-section home-section--main-header"></main-header>
+        <education class="home__section home-section home-section--education"></education>
+        <projects class="home__section home-section home-section--projects"></projects>
+        <goals class="home__section home-section home-section--goals"></goals>
+        <contact class="home__section home-section home-section--contact"></contact>
     </div>
 </template>
 
@@ -33,12 +33,38 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
-    @import "../scss/base/all";
-    @import "../scss/layout/all";
-
     .home {
         &__section {
             margin-bottom: modular-scale(5);
+
+        .ui-button {
+            margin-top: modular-scale(4);
+        }
+         }
+
+    }
+
+    .home-section {
+
+    }
+
+    .main-header {
+        &__container {
+             $unitless: modular-scale(1)/1em;
+             font-size: $unitless + rem;
+             padding: 0 modular-scale(1);
+         }
+    }
+
+    .main-section {
+        &__container {
+             padding: 0 modular-scale(1);
+             $unitless: modular-scale(1)/1em;
+             font-size: $unitless + rem;
+         }
+        &__headline {
+            text-align: center;
+            font-size: modular-scale(2);
          }
     }
 </style>

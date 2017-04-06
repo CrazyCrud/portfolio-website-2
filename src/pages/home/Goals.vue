@@ -26,7 +26,4 @@
 <style lang="scss">
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
-
-    @import "../../scss/base/all";
-    @import "../../scss/layout/all";
 </style>
