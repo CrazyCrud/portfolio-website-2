@@ -1,12 +1,12 @@
 <template>
-    <div id="app">
+    <div id="app" class="animated fadeIn">
         <main-menu></main-menu>
         <main class="main">
-            <router-view transition="fade" transition-mode="out-in" class="animated">
-
-            </router-view>
+            <transition name="transition-router-fade">
+                <router-view>
+                </router-view>
+            </transition>
             <main-footer>
-
             </main-footer>
         </main>
     </div>
@@ -40,16 +40,26 @@
 
 
     #app {
-        .transition-router-enter-active, .transition-router-leave-active {
+        .transition-router-fade-enter-active, .transition-router-fade-leave-active {
             transition: opacity .5s;
         }
 
-        .transition-router-enter, .transition-router-leave {
-            opacity: .5s;
+        .transition-router-fade-enter, .transition-router-fade-leave-to {
+            opacity: 0;
         }
 
         .main {
             margin-top: em(80, strip-unit($font-size--s)) + modular-scale(3);
+
+            .page {
+                &__headline {
+                     text-align: center;
+                     font-size: modular-scale(2);
+                     margin-bottom: modular-scale(-1);
+                 }
+            }
+
+
         }
 
         .button-link {

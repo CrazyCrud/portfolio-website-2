@@ -1,17 +1,14 @@
 <template>
     <footer class="main-footer">
-        <!--
-        <div class="footer-logo">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo image">
+        <div class="main-footer__logo">
+            (づ￣3￣)づ
         </div>
-        -->
-        <ul class="main-footer__menu main-footer-menu">
-            <li v-for="menuItem in menuItems" class="main-footer-menu__item main-footer-menu-item">
-                <router-link :to="menuItem.link" class="main-footer-menu-item__link">{{menuItem.text}}</router-link>
-            </li>
-        </ul>
-
-        <div class="main-footer__secondary-links">
+        <div class="main-footer__content">
+            <ul class="main-footer__menu main-footer-menu">
+                <li v-for="menuItem in menuItems" class="main-footer-menu__item main-footer-menu-item">
+                    <router-link :to="menuItem.link" class="main-footer-menu-item__link">{{menuItem.text}}</router-link>
+                </li>
+            </ul>
             <ul class="main-footer__social main-footer-social">
                 <li class="main-footer-social__item"><a href="javascript:void(0)">
                     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
@@ -23,8 +20,8 @@
                 </li>
                 <li class="main-footer-social__item">
                     <a href="javascript:void(0)">
-                    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
-                </a></li>
+                        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
+                    </a></li>
             </ul>
         </div>
     </footer>
@@ -62,13 +59,15 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
+    @import "../scss/base/all";
+
     $base-spacing: 1.5em !default;
-    $action-color: #477DCA !default;
+    $action-color: $primary-color--light !default;
     $medium-screen: 40em !default;
     $large-screen: 53.75em !default;
-    $footer-background: desaturate(darken($action-color, 20%), 30%);
-    $footer-color: white;
-    $footer-link-color: transparentize($footer-color, 0.6);
+    $footer-background: $primary-color--medium;
+    $footer-color: $white;
+    $footer-link-color: $white;
     $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
     .main-footer {
@@ -77,9 +76,17 @@
         padding: $base-spacing;
         width: 100%;
 
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+         }
+
         &__logo {
             margin-bottom: 1em;
             margin-right: 1em;
+            text-align: center;
+        color: $white;
          /*
             @include media($large-screen) {
                 float: left;
@@ -128,6 +135,7 @@
     }
 
     .main-footer-social {
+    list-style: none;
         &__item {
              float: left;
              font-size: 1em;

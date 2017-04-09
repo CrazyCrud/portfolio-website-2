@@ -55,7 +55,7 @@
 
     .project {
         position: relative;
-        max-width: 60%;
+        max-width: 90%;
         height: 260px;
         color: white;
         background-color: $primary-color--dark;
