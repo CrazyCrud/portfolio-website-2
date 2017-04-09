@@ -28,29 +28,14 @@
 </template>
 
 <script>
+    import Global from '../base/Global.js';
+
     export default {
         name: 'main-menu',
         data: function () {
             return {
                 isOpen: false,
-                menuItems: [
-                    {
-                        link: "/was-ich-biete",
-                        text: "Was ich biete"
-                    },
-                    {
-                        link: "/ueber-mich",
-                        text: "Über mich"
-                    },
-                    {
-                        link: "/projekte",
-                        text: "Projekte"
-                    },
-                    {
-                        link: "/kontakt",
-                        text: "Kontakt"
-                    }
-                ]
+                menuItems: Global.menuItems
             }
         },
         methods: {
@@ -92,7 +77,11 @@
          }
 
         &__branding {
-
+             padding: .4rem .4rem;
+             background: black;
+            a {
+                color: #9ee6cf !important;
+            }
         }
 
         &__icon {

@@ -29,4 +29,10 @@
 <style lang="scss">
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
+
+    .main-section.contact {
+        &__copy {
+        margin-bottom: 0;
+         }
+    }
 </style>

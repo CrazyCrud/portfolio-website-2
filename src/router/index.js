@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '../pages/Home';
-import Skills from '../pages/Skills';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Contact from '../pages/Contact';
@@ -15,10 +14,6 @@ export default new Router({
             component: Home
         },
         {
-            path: '/was-ich-biete',
-            component: Skills
-        },
-        {
             path: '/ueber-mich',
             component: About
         },
@@ -27,7 +22,7 @@ export default new Router({
             component: Projects
         },
         {
-            path: 'contact',
+            path: '/kontakt',
             component: Contact
         }
     ]

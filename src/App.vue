@@ -6,20 +6,17 @@
                 <router-view>
                 </router-view>
             </transition>
-            <main-footer>
-            </main-footer>
         </main>
     </div>
 </template>
 
 <script>
     import MainMenu from './components/MainMenu';
-    import MainFooter from './components/Footer.vue';
     import Utility from './modules/Utility';
 
     export default {
         name: 'app',
-        components: {MainMenu, MainFooter},
+        components: {MainMenu},
 
         mounted: function() {
             Utility.setupFadeIn();

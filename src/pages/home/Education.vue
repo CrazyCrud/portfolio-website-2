@@ -63,6 +63,7 @@
     .education-container {
         &__icon-container {
             text-align: center;
+        display: none;
          }
 
          &__copy {

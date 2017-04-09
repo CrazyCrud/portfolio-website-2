@@ -1,7 +1,7 @@
 <template>
     <footer class="main-footer">
         <div class="main-footer__logo">
-            (づ￣3￣)づ
+            (☞ﾟ∀ﾟ)☞
         </div>
         <div class="main-footer__content">
             <ul class="main-footer__menu main-footer-menu">
@@ -28,28 +28,13 @@
 </template>
 
 <script>
+    import Global from '../base/Global.js';
+
     export default {
         name: 'main-footer',
         data: function () {
             return {
-                menuItems: [
-                    {
-                        link: "/was-ich-biete",
-                        text: "Was ich biete"
-                    },
-                    {
-                        link: "/ueber-mich",
-                        text: "Über mich"
-                    },
-                    {
-                        link: "/projekte",
-                        text: "Projekte"
-                    },
-                    {
-                        link: "/kontakt",
-                        text: "Kontakt"
-                    }
-                ]
+                menuItems: Global.menuItems
             }
         }
     }
@@ -75,6 +60,7 @@
         display: inline-block;
         padding: $base-spacing;
         width: 100%;
+    margin-top: modular-scale(6);
 
         &__content {
             display: flex;

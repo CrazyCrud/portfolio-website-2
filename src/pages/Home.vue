@@ -1,15 +1,18 @@
 <template>
     <div class="home">
         <main-header class="home__section home-section home-section--main-header"></main-header>
-        <education class="home__section home-section home-section--education"></education>
         <projects class="home__section home-section home-section--projects"></projects>
-        <goals class="home__section home-section home-section--goals"></goals>
+        <!--<education class="home__section home-section home-section--education"></education>-->
+        <!--<goals class="home__section home-section home-section--goals"></goals>-->
         <contact class="home__section home-section home-section--contact"></contact>
+        <main-footer>
+        </main-footer>
     </div>
 </template>
 
 <script>
     import MainHeader from './home/MainHeader.vue';
+    import MainFooter from '../components/Footer.vue';
     import Education from './home/Education.vue';
     import Projects from './home/Projects.vue';
     import Goals from './home/Goals.vue';
@@ -18,7 +21,7 @@
 
     export default {
         name: 'home',
-        components: {MainHeader, Education, Projects, Goals, Contact, UiButton},
+        components: {MainHeader, MainFooter, Education, Projects, Goals, Contact, UiButton},
         data: function() {
             return {
                 goalsHeadline: 'Mein Ziel',
@@ -64,7 +67,7 @@
          }
         &__headline {
             text-align: center;
-            font-size: modular-scale(2);
+            font-size: modular-scale(1);
             margin-bottom: modular-scale(-1);
          }
     }
