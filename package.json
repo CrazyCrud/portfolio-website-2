@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "bourbon": "^4.3.3",
     "bourbon-neat": "^2.0.0",
     "file-loader": "^0.10.1",

@@ -2,9 +2,13 @@
     <section class="main-section projects">
         <div class="main-section__container projects__container">
             <h2 class="main-section__headline projects__headline">{{projectsHeadline}}</h2>
-            <div v-for="project in projects" class="project hide-me">
+            <div v-for="(project, index) in projects" class="project hide-me">
                 <div class="project__content-container">
-                    <div class="project__link project-link"></div>
+                    <div class="project__link project-link">
+                        <svg class="link-icon project-link__icon">
+                            <use xlink:href="#icon-follow--left"></use>
+                        </svg>
+                    </div>
                     <h5 class="project__title">{{project.title}}</h5>
                     <p class="project__type">{{project.type}}</p>
                 </div>
@@ -55,7 +59,7 @@
         height: 260px;
         color: white;
         background-color: $primary-color--dark;
-        margin-bottom: modular-scale(2);
+        margin-top: modular-scale(3);
 
         &__content-container {
             display: flex;
@@ -75,6 +79,7 @@
           }
 
           &__link {
+               display: block;
                 width: 44px;
                 height: 44px;
                 position: absolute;
@@ -98,10 +103,25 @@
 
         .project-link {
              right: -22px;
+
+            &__icon {
+                 transform: scaleX(-1);
+             }
          }
     }
 
     .project:last-of-type {
         margin-bottom: 0;
+    }
+
+    .project-link {
+        &__icon {
+        fill: $primary-color--dark;
+        position: relative;
+        left: 6px;
+        top: 6px;
+             width: 32px;
+             height: 32px;
+         }
     }
 </style>

@@ -35,7 +35,7 @@
 
     .home {
         &__section {
-            margin-bottom: modular-scale(5);
+            margin-bottom: modular-scale(6);
 
         .ui-button {
             margin-top: modular-scale(4);

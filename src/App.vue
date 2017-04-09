@@ -2,14 +2,12 @@
     <div id="app">
         <main-menu></main-menu>
         <main class="main">
-            <transition name="transition-router">
-                <router-view>
+            <router-view transition="fade" transition-mode="out-in" class="animated">
 
-                </router-view>
-                <main-footer>
+            </router-view>
+            <main-footer>
 
-                </main-footer>
-            </transition>
+            </main-footer>
         </main>
     </div>
 </template>
@@ -33,14 +31,12 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
-    @import "../node_modules/megatype/megatype.scss";
-    @include megatype;
-
     @import "./scss/base/all";
     @import "./scss/components/all";
     @import "./scss/layout/all";
     @import "./scss/utils/mixins";
     @import "./scss/utils/functions";
+    @import "./scss/vendors/animate";
 
 
     #app {

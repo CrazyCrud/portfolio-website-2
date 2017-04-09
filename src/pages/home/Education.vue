@@ -3,8 +3,8 @@
         <div class="main-section__container education__container education-container">
             <h2 class="main-section__headline education__headline">{{educationHeadline}}</h2>
             <div class="education__school education-school">
-                <div class="education-school__icon-container education-container__icon-container icon-container-school">
-                    <svg class="icon-container-school__icon-school icon-school">
+                <div class="education-school__icon-container education-icon-container education-container__icon-container icon-container-school">
+                    <svg class="icon-container-school__icon-school icon-school education-icon-container__icon">
                         <use xlink:href="#icon-school"></use>
                     </svg>
                 </div>
@@ -16,8 +16,8 @@
                 </dl>
             </div>
             <div class="education__work education-work">
-                <div class="education-work__icon-container education-container__icon-container icon-container-work">
-                    <svg class="icon-container-work__icon-work icon-work">
+                <div class="education-work__icon-container education-container__icon-container education-icon-container icon-container-work">
+                    <svg class="icon-container-work__icon-work icon-work education-icon-container__icon">
                         <use xlink:href="#icon-work"></use>
                     </svg>
                 </div>
@@ -54,6 +54,12 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
+    @import "../../scss/base/all";
+    @import "../../scss/components/all";
+    @import "../../scss/layout/all";
+    @import "../../scss/utils/mixins";
+    @import "../../scss/utils/functions";
+
     .education-container {
         &__icon-container {
             text-align: center;
@@ -86,5 +92,11 @@
 
     .education-school {
         margin-bottom: modular-scale(3);
+    }
+
+    .education-icon-container {
+        &__icon {
+            fill: $primary-color--medium;
+         }
     }
 </style>
