@@ -4,7 +4,7 @@
             <h2 class="main-section__headline contact__headline">{{contactHeadline}}</h2>
             <p class="contact__copy">{{contactCopy}}</p>
             <router-link to="/kontakt" class="button-link">
-                <ui-button color="primary" size="normal">{{contactButton}}</ui-button>
+                <ui-button color="default" size="normal">{{contactButton}}</ui-button>
             </router-link>
         </div>
     </section>

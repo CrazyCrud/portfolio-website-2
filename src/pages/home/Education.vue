@@ -29,7 +29,7 @@
                 </dl>
             </div>
             <router-link to="/ueber-mich" class="button-link">
-                <ui-button color="primary" size="normal">{{educationButton}}</ui-button>
+                <ui-button color="default" size="normal">{{educationButton}}</ui-button>
             </router-link>
         </div>
     </section>
@@ -69,15 +69,17 @@
                 dt {
                     float: left;
                     width: 50%;
-                    padding-right: modular-scale(-2);
                     margin: 0;
+                    margin-top: modular-scale(-1);
+                    padding-right: modular-scale(-5);
                     text-align: right;
                 }
                 dd {
                     float: left;
                     width: 50%;
-                    padding-left: modular-scale(-2);
+                    padding-left: modular-scale(-5);
                     margin: 0;
+                    margin-top: modular-scale(-1);
                 }
           }
     }

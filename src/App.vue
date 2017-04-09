@@ -6,6 +6,9 @@
                 <router-view>
 
                 </router-view>
+                <main-footer>
+
+                </main-footer>
             </transition>
         </main>
     </div>
@@ -13,11 +16,12 @@
 
 <script>
     import MainMenu from './components/MainMenu';
+    import MainFooter from './components/Footer.vue';
     import Utility from './modules/Utility';
 
     export default {
         name: 'app',
-        components: {MainMenu},
+        components: {MainMenu, MainFooter},
 
         mounted: function() {
             Utility.setupFadeIn();
@@ -29,13 +33,14 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
+    @import "../node_modules/megatype/megatype.scss";
+    @include megatype;
+
     @import "./scss/base/all";
     @import "./scss/components/all";
     @import "./scss/layout/all";
     @import "./scss/utils/mixins";
     @import "./scss/utils/functions";
-
-    @include fadeIn();
 
 
     #app {

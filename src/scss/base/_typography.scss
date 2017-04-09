@@ -9,19 +9,12 @@ $bariol-files: 'bariol_regular-webfont';
 
 @font-face {
   @include font-face($bariol, "/../../assets/fonts/" + $bariol-files, $file-formats: eot woff2 woff ttf svg);
-  /*
-  font-family: 'Noway';
-  src: url('/../../assets/fonts/noway-regular-webfont.eot');
-  src: url('/../../assets/fonts/noway-regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/../../assets/fonts/noway-regular-webfont.woff2') format('woff2'),
-  url('/../../assets/fonts/noway-regular-webfont.woff') format('woff'),
-  url('/../../assets/fonts/noway-regular-webfont.ttf')  format('truetype'),
-  url('/../../assets/fonts/noway-regular-webfont.svg#nowayregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  */
 }
 
-body {
-  font-family: $bariol, sans-serif;
-}
+$sans: (
+        font-family: $bariol,
+        regular: normal,
+        bold: bold,
+        cap-height: 0.71,
+        cap-position: 0.5
+) !default;

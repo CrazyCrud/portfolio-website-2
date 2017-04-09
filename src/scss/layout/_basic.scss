@@ -13,4 +13,9 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: $bariol, sans-serif;
+}
+
+.hide-me {
+  opacity: 0;
 }

@@ -2,7 +2,9 @@
     <nav>
         <div class="main-menu">
             <div class="main-menu__header">
-                <div class="main-menu__branding main-menu-branding"><router-link class="main-menu-branding__link" to="/">Constantin</br>Lehenmeier</router-link></div>
+                    <div class="main-menu__branding main-menu-branding">
+                        <router-link class="main-menu-branding__link" to="/">Constantin</br>Lehenmeier</router-link>
+                    </div>
                     <div class="main-menu__icon main-menu-icon" v-on:click="onClickMainMenuIcon" v-bind:class="{ 'main-menu-icon--opened': isOpen}">
                         <span></span>
                         <span></span>
@@ -14,15 +16,13 @@
                         </li>
                     </ul>
             </div>
-            <transition name="transition-fade">
-                <div class="main-menu__overlay main-menu-overlay" v-show="isOpen">
-                    <ul class="main-menu__items main-menu-items main-menu-items--mobile">
-                        <li v-for="menuItem in menuItems" class="main-menu__item main-menu-item">
-                            <router-link :to="menuItem.link">{{menuItem.text}}</router-link>
-                        </li>
-                    </ul>
-                </div>
-            </transition>
+        </div>
+        <div class="main-menu-overlay" v-bind:class="{'main-menu-overlay--opened': isOpen}">
+            <ul class="main-menu__items main-menu-items main-menu-items--mobile">
+                <li v-for="menuItem in menuItems" class="main-menu__item main-menu-item">
+                    <router-link :to="menuItem.link">{{menuItem.text}}</router-link>
+                </li>
+            </ul>
         </div>
     </nav>
 </template>
@@ -81,16 +81,14 @@
         width: 100%;
         padding: 0 2rem;
         background-color: white;
-        z-index: 100;
+        z-index: 1000;
 
         &__header {
-
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
              height: 80px;
-
          }
 
         &__branding {
@@ -101,23 +99,39 @@
 
         }
 
-         &__overlay {
-        display: block;
+         &__items {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+          }
+
+    }
+
+    .main-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 100%;
         width: 100%;
         height: 100%;
-          }
-
-         &__items {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-          }
-
+        z-index: 100;
+        background-color: $white;
+        transition: all 0.2s;
+        &--opened {
+            left: 0;
+         }
     }
 
     .main-menu-items {
         &--mobile {
             @include breakpoint(small) { display: none; };
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            font-size: modular-scale(2);
+
+            .main-menu-item {
+                margin-top: modular-scale(2);
+            }
          }
 
          &--desktop {
@@ -128,6 +142,12 @@
                 padding: modular-scale(-2) modular-scale(-1);
             }
           }
+    }
+
+    .main-menu-item {
+        a {
+            text-decoration: none;
+        }
     }
 
     .main-menu-branding {
