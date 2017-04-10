@@ -1,8 +1,8 @@
 <template>
-    <section class="main-section contact">
-        <div class="main-section__container contact__container">
-            <h2 class="main-section__headline contact__headline">{{contactHeadline}}</h2>
-            <p class="contact__copy">{{contactCopy}}</p>
+    <section class="main-section main-section__contact main-section-contact">
+        <div class="main-section__content-container main-section-contact__content-container">
+            <h2 class="main-section__headline main-section-contact__headline">{{contactHeadline}}</h2>
+            <p class="main-section-contact__copy">{{contactCopy}}</p>
             <router-link to="/kontakt" class="button-link">
                 <ui-button color="default" size="normal">{{contactButton}}</ui-button>
             </router-link>
@@ -30,9 +30,19 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
-    .main-section.contact {
+    @import "../../scss/base/all";
+    @import "../../scss/utils/variables";
+
+    .main-section-contact {
         &__copy {
-        margin-bottom: 0;
+            margin-bottom: 0;
+         }
+    }
+
+    .main-section {
+        &__contact-container {
+             max-width: $mq-600;
+            margin: 0 auto;
          }
     }
 </style>

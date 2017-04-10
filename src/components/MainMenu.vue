@@ -20,7 +20,7 @@
         <div class="main-menu-overlay" v-bind:class="{'main-menu-overlay--opened': isOpen}">
             <ul class="main-menu__items main-menu-items main-menu-items--mobile">
                 <li v-for="menuItem in menuItems" class="main-menu__item main-menu-item">
-                    <router-link :to="menuItem.link">{{menuItem.text}}</router-link>
+                    <router-link :to="menuItem.link" v-on:click.native="isOpen = false">{{menuItem.text}}</router-link>
                 </li>
             </ul>
         </div>
@@ -37,6 +37,12 @@
                 isOpen: false,
                 menuItems: Global.menuItems
             }
+        },
+        watch: {
+          '$route': function(newRoute, oldRoute) {
+              console.log("route has changed");
+              this.isOpen = false;
+          }
         },
         methods: {
             onClickMainMenuIcon: function() {
@@ -64,7 +70,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding: 0 2rem;
+        padding: 0 modular-scale(1);
         background-color: white;
         z-index: 1000;
 
@@ -129,6 +135,35 @@
 
             .main-menu-item {
                 padding: modular-scale(-2) modular-scale(-1);
+
+                a {
+                    position: relative;
+                    color: $grey--medium !important;
+                }
+
+                a.router-link-active {
+                    color: $black !important;
+                }
+
+                a:hover {
+                    &:after {
+                         transform: translateY(0px);
+                         opacity: 1;
+                     }
+                }
+
+                a:after {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background: rgba(0,0,0,0.1);
+                    content: '';
+                    opacity: 0;
+                    transition: opacity 0.3s, transform 0.3s;
+                    transform: translateY(10px);
+                }
             }
           }
     }
@@ -136,6 +171,9 @@
     .main-menu-item {
         a {
             text-decoration: none;
+        }
+        a:visited {
+            color: inherit;
         }
     }
 

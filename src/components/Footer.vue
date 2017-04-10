@@ -1,28 +1,34 @@
 <template>
     <footer class="main-footer">
-        <div class="main-footer__logo">
-            (☞ﾟ∀ﾟ)☞
-        </div>
-        <div class="main-footer__content">
-            <ul class="main-footer__menu main-footer-menu">
-                <li v-for="menuItem in menuItems" class="main-footer-menu__item main-footer-menu-item">
-                    <router-link :to="menuItem.link" class="main-footer-menu-item__link">{{menuItem.text}}</router-link>
-                </li>
-            </ul>
-            <ul class="main-footer__social main-footer-social">
-                <li class="main-footer-social__item"><a href="javascript:void(0)">
-                    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
-                </a>
-                </li>
-                <li class="main-footer-social__item"><a href="javascript:void(0)">
-                    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
-                </a>
-                </li>
-                <li class="main-footer-social__item">
-                    <a href="javascript:void(0)">
-                        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
-                    </a></li>
-            </ul>
+        <div class="main-footer__content-container">
+            <svg class="main-footer__triangle">
+                <use xlink:href="#triangle"></use>
+            </svg>
+
+            <div class="main-footer__content">
+                <ul class="main-footer__menu main-footer-menu">
+                    <li v-for="menuItem in menuItems" class="main-footer-menu__item main-footer-menu-item">
+                        <router-link :to="menuItem.link" class="main-footer-menu-item__link">{{menuItem.text}}</router-link>
+                    </li>
+                </ul>
+                <ul class="main-footer__social main-footer-social">
+                    <li class="main-footer-social__item"><a href="javascript:void(0)">
+                        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+                    </a>
+                    </li>
+                    <li class="main-footer-social__item"><a href="javascript:void(0)">
+                        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+                    </a>
+                    </li>
+                    <li class="main-footer-social__item">
+                        <a href="javascript:void(0)">
+                            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
+                        </a></li>
+                </ul>
+            </div>
+            <div class="main-footer__logo">
+                (☞ﾟ∀ﾟ)☞
+            </div>
         </div>
     </footer>
 </template>
@@ -45,6 +51,7 @@
     @import "~bourbon-neat/core/neat";
 
     @import "../scss/base/all";
+    @import "../scss/utils/variables";
 
     $base-spacing: 1.5em !default;
     $action-color: $primary-color--light !default;
@@ -56,44 +63,53 @@
     $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
     .main-footer {
-        background: $footer-background;
-        display: inline-block;
-        padding: $base-spacing;
-        width: 100%;
-    margin-top: modular-scale(6);
+
+        &__content-container {
+             position: relative;
+             height: $footer-height;
+             background: $footer-background;
+             display: inline-block;
+             width: 100%;
+             margin-top: modular-scale(4);
+             padding-bottom: modular-scale(2);
+             left: 0;
+             bottom: 0;
+
+            @media screen and (min-width: $mq-600) {
+                height: $footer-height--tablet-up;
+            }
+
+            @media screen and (min-width: $mq-1200) {
+                height: $footer-height--desktop-up;
+            }
+         }
+
+        &__triangle {
+            fill: $white;
+                width: 100%;
+                height: 40px;
+                margin-bottom: modular-scale(3);
+             }
 
         &__content {
             display: flex;
             align-items: center;
             justify-content: space-between;
+        max-width: $mq-900;
+            margin: 0 auto;
+            padding: 0 modular-scale(5);
          }
 
         &__logo {
-            margin-bottom: 1em;
             margin-right: 1em;
             text-align: center;
-        color: $white;
-         /*
-            @include media($large-screen) {
-                float: left;
-                margin-bottom: 0;
-                }
-                */
+            color: $white;
         }
 
         &__menu {
             line-height: 1.5em;
             margin: 0 0 1em 0;
             padding: 0;
-
-            /*
-            @include media($large-screen) {
-                float: left;
-                line-height: 1.8em;
-                margin-bottom: 0;
-                margin-left: 1em;
-            }
-            */
         }
 
         &__secondary-items {

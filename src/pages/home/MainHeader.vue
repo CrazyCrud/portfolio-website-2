@@ -1,6 +1,6 @@
 <template>
     <header class="main-header">
-        <div class="main-header__container">
+        <div class="main-header__content-container main-section__content-container">
             <h1 class="main-header__headline main-header-headline">{{headerGreeting}}<span class="main-header-headline__name">{{headerName}}</span>.</br>
                 {{headerSkills}}
             </h1>
@@ -44,8 +44,15 @@
     @import "../../scss/utils/mixins";
 
     .main-header {
-        padding-top: modular-scale(6);
-    margin-bottom: modular-scale(8);
+        &__content-container {
+
+             padding-top: modular-scale(6);
+             margin-bottom: modular-scale(8);
+
+            @media screen and (min-width: $mq-900) {
+                margin-left: 12.5%;
+            }
+         }
 
         &__headline {
             position: relative;

@@ -1,4 +1,5 @@
 @import "../base/media-queries";
+@import "../base/color";
 
 @mixin breakpoint($point) {
   @if $point == large {
@@ -13,43 +14,6 @@
     @media (min-width: $mq-720) {
       @content;
     }
-  }
-}
-
-@mixin fadeIn() {
-  .fade-in-element {
-    $base-border-color: gainsboro !default;
-    $base-border-radius: 3px !default;
-    $base-background-color: white !default;
-    $base-line-height: 1.5em !default;
-    $base-spacing: 1.5em !default;
-    $dark-gray: #333 !default;
-    $base-font-color: $dark-gray !default;
-
-    @include clearfix;
-    background: $base-background-color;
-    border: 1px solid silver;
-    border-radius: $base-border-radius;
-    box-shadow: 0 2px 2px transparentize(black, 0.8);
-    line-height: $base-line-height;
-    margin-bottom: 4em;
-    padding: $base-spacing;
-    text-align: center;
-    width: 100%;
-
-    p {
-      color: $base-font-color;
-      line-height: $base-line-height;
-    }
-  }
-
-  .js-fade-element-hide {
-    opacity: 0;
-  }
-
-  .js-fade-element-show {
-    opacity: 1;
-    transition: all 0.4s ease-in-out;
   }
 }
 
@@ -154,4 +118,84 @@
     linear-gradient($gradient-angle, $bg-color-1, $bg-color-2),
     center no-repeat $bg-color-1 scroll;
   }
+}
+
+@mixin flexbox-items($border-radius, $background-color, $font-color) {
+  .flex-boxes {
+    $base-border-radius: $border-radius !default;
+    $base-background-color: $background-color !default;
+    $dark-gray: #333 !default;
+    $light-gray: #DDD !default;
+    $base-font-color: $font-color !default;
+    $flex-box-border-color: $light-gray;
+    $flex-box-border: 1px solid $flex-box-border-color;
+    $flex-box-background: lighten($light-gray, 10%);
+    $flex-box-gutter: 0.4em;
+    $flex-box-width: 18em;
+    $flex-box-color: transparentize($base-font-color, 0.3);
+    $flex-box-top-colors:
+            $primary-color--light,
+            $secondary-color--light,
+            $primary-color--medium,
+            $secondary-color--medium,
+            $primary-color--light,
+            $secondary-color--light;
+
+    @include clearfix;
+    align-items: stretch;
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    .flex-box {
+      align-self: stretch;
+      background: $flex-box-background;
+      border-radius: $base-border-radius;
+      box-shadow: inset 0 0 1px $flex-box-border-color, 0 2px 4px darken($base-background-color, 10%);
+      display: block;
+      flex: 2 2 15em;
+      margin: $flex-box-gutter;
+      padding: 2em 2em 3em 2em;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+
+      @for $i from 1 to 7 { // assign colors from $flex-box-top-colors list
+        &:nth-child(#{$i}) {
+          $color-from-list: nth($flex-box-top-colors, $i);
+          border-top: 6px solid $color-from-list;
+
+          &:focus,
+          &:hover {
+            background-color: transparentize($color-from-list, 0.9);
+          }
+        }
+      }
+
+      img {
+        display: block;
+        height: 3em;
+        margin: 0 auto 1em;
+        opacity: 0.4;
+      }
+
+      .flex-title {
+        color: $flex-box-color;
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        color: transparentize($flex-box-color, 0.1);
+        line-height: 1.5em;
+        margin: auto;
+      }
+    }
+
+    .flex-box-big {
+      flex: 1 1 40em;
+    }
+  }
+
 }

@@ -17,7 +17,11 @@
     export default {
         name: 'app',
         components: {MainMenu},
-
+        watch: {
+            '$route': function() {
+                window.scrollTo(0,0);
+            }
+        },
         mounted: function() {
             Utility.setupFadeIn();
         }
@@ -33,10 +37,14 @@
     @import "./scss/layout/all";
     @import "./scss/utils/mixins";
     @import "./scss/utils/functions";
+    @import "./scss/utils/variables";
     @import "./scss/vendors/animate";
 
 
     #app {
+        min-height: 100%;
+        background-color: $primary-color--medium;
+
         .transition-router-fade-enter-active, .transition-router-fade-leave-active {
             transition: opacity .5s;
         }
@@ -47,6 +55,7 @@
 
         .main {
             margin-top: em(80, strip-unit($font-size--s)) + modular-scale(3);
+            background-color: $white;
 
             .page {
                 &__headline {
@@ -63,4 +72,12 @@
             text-decoration: none;
         }
     }
+
+    /*
+    #app:after {
+        content: "";
+        display: block;
+        height: $footer-height;
+    }
+    */
 </style>

@@ -2,8 +2,6 @@
     <div class="home">
         <main-header class="home__section home-section home-section--main-header"></main-header>
         <projects class="home__section home-section home-section--projects"></projects>
-        <!--<education class="home__section home-section home-section--education"></education>-->
-        <!--<goals class="home__section home-section home-section--goals"></goals>-->
         <contact class="home__section home-section home-section--contact"></contact>
         <main-footer>
         </main-footer>
@@ -36,6 +34,8 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
+    @import "../scss/base/all";
+
     .home {
         &__section {
             margin-bottom: modular-scale(6);
@@ -60,11 +60,18 @@
     }
 
     .main-section {
-        &__container {
+        &__content-container {
+             max-width: $mq-900;
              padding: 0 modular-scale(1);
              $unitless: modular-scale(1)/1em;
              font-size: $unitless + rem;
+
+            @media screen and (min-width: $mq-900) {
+                margin-left: 12.5%;
+                margin-right: 12.5%;
+            }
          }
+
         &__headline {
             text-align: center;
             font-size: modular-scale(1);
