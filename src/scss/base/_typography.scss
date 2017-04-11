@@ -3,19 +3,6 @@ $font-size--m: 18px;
 $font-size--s: 16px;
 $font-size--xs: 14px;
 
-$boway: 'noway';
-$noway-files: 'noway-regular-webfont';
-$bariol: 'bariol';
-$bariol-files: 'bariol_regular-webfont';
-
-@font-face {
-  @include font-face($bariol, "/../../assets/fonts/" + $bariol-files, $file-formats: eot woff2 woff ttf svg);
-}
-
-$sans: (
-        font-family: $bariol,
-        regular: normal,
-        bold: bold,
-        cap-height: 0.71,
-        cap-position: 0.5
-) !default;
+$open-sans: 'Open Sans';
+$varela: 'Varela Round';
+$pacifico: 'Pacifico';

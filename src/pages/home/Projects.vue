@@ -1,24 +1,29 @@
 <template>
     <section class="main-section main-section__projects main-section-projects">
-        <div class="main-section__content-container main-section-projects__content-container">
-            <h2 class="main-section__headline main-section-projects__headline">{{projectsHeadline}}</h2>
-                <div class="main-section-projects__projects-container">
-                    <div v-for="(project, index) in projects" class="main-section-project">
-                        <div class="main-section-project__content-container main-section-project-content-container hide-me">
-                            <div class="project__link project-link">
-                                <svg class="link-icon project-link__icon">
-                                    <use xlink:href="#icon-follow--left"></use>
-                                </svg>
+        <div class="main-section-projects__container">
+            <svg class="main-section-projects__triangle">
+                <use xlink:href="#triangle--half"></use>
+            </svg>
+            <div class="main-section__content-container main-section-projects__content-container">
+                <h2 class="main-section__headline main-section-projects__headline">{{projectsHeadline}}</h2>
+                    <div class="main-section-projects__projects-container">
+                        <div v-for="(project, index) in projects" class="main-section-project" v-bind:class="project.classAttr">
+                            <div class="main-section-project__content-container main-section-project-content-container hide-me">
+                                <div class="main-section-project__link main-section-project-link" v-bind:class="{ 'main-section-project-link--inactive': !project.active }">
+                                    <svg class="link-icon main-section-project-link__icon">
+                                        <use xlink:href="#icon-follow--left"></use>
+                                    </svg>
+                                </div>
+                                <h5 class="main-section-project__title">{{project.title}}</h5>
+                                <p class="main-section-project__copy">{{project.copy}}</p>
+                                <p class="main-section-project__type">{{project.type}}</p>
                             </div>
-                            <h5 class="project__title">{{project.title}}</h5>
-                            <p class="project__copy">{{project.copy}}</p>
-                            <p class="project__type">{{project.type}}</p>
                         </div>
                     </div>
-                </div>
-            <router-link to="/projekte" class="button-link">
-                <ui-button color="default" size="normal">{{projectsButton}}</ui-button>
-            </router-link>
+                <router-link to="/projekte" class="button-link">
+                    <ui-button color="default" size="normal">{{projectsButton}}</ui-button>
+                </router-link>
+            </div>
         </div>
     </section>
 </template>
@@ -31,18 +36,22 @@
         components: {UiButton},
         data: function() {
             return {
-                projectsHeadline: 'Projekte',
+                projectsHeadline: 'Referenzen',
                 projectsButton: 'Mehr Projekte',
                 projects: [
                     {
+                        classAttr: 'main-section-project--latrinalia',
                         title: 'Latrinalia',
                         type: 'Web-Development',
-                        copy: 'Someday is not a fucking day of the week. Why are you fucking reading all of this? Get back to.'
+                        copy: 'Someday is not a fucking day of the week. Why are you fucking reading all of this? Get back to.',
+                        active: false
                     },
                     {
+                        classAttr: 'main-section-project--segelteam',
                         title: 'Segelteam',
                         type: 'Web-Development',
-                        copy: 'Someday is not a fucking day of the week. Why are you fucking reading all of this? Get back to.'
+                        copy: 'Someday is not a fucking day of the week. Why are you fucking reading all of this? Get back to.',
+                        active: true
                     }
                 ]
             }
@@ -64,11 +73,19 @@
     $grid-projects--tablet-up: (
         columns: 2,
         gutter: 2rem,
-         media: "(min-width: #{$mq-1000} )"
+         media: "(min-width: #{$mq-1100} )"
     );
 
     .main-section-projects {
+
+    &__container {
+        position: relative;
+        background-color: $white--light;
+        padding-bottom: modular-scale(6);
+     }
+
         &__content-container {
+        z-index: 10;
          max-width: none;
             @media screen and (min-width: $mq-900) {
                 margin-left: 12.5%;
@@ -76,12 +93,21 @@
             }
          }
 
+        &__triangle {
+            position: absolute;
+            fill: $white--light;
+            width: 100%;
+             top: -181px;
+             height: 300px;
+        z-index: 1;
+         }
+
 
         &__projects-container {
             @include grid-container;
          @include grid-collapse($grid-projects);
             @include grid-media($grid-projects--tablet-up) {
-            @include grid-collapse($grid-projects--tablet-up);
+                @include grid-collapse($grid-projects--tablet-up);
             }
          }
 
@@ -100,7 +126,7 @@
         }
 
         margin-top: modular-scale(3);
-        background: url('https://placeimg.com/640/480/tech');
+        font-size: 1rem;
         background-size: cover;
         padding-top: modular-scale(2);
         padding-bottom: modular-scale(1);
@@ -110,32 +136,56 @@
              position: relative;
              max-width: 80%;
              height: 260px;
-            padding: modular-scale(-2);
-             color: white;
-             background-color: darken($primary-color--medium, 20%);
+            padding: modular-scale(1) modular-scale(2);
+             color: $black--light;
+             background-color: $primary-color--light;
             display: flex;
             flex-direction: column;
-             justify-content: center;
+             justify-content: space-between;
              align-items: center;
+
+            @media screen and (min-width: $mq-600) {
+                height: 290px;
+            }
+
+            @media screen and (min-width: $mq-1200) {
+                height: 300px;
+                padding: modular-scale(-1);
+                max-width: none;
+            }
+
+            @media screen and (min-width: $mq-1500) {
+                height: 330px;
+                max-width: 86%;
+            }
          }
 
         &__title {
-            font-size: modular-scale(1);
+            font-size: modular-scale(2);
+            font-weight: 300;
          }
 
          &__type {
-              font-size: modular-scale(-1);
+              font-size: modular-scale(1);
             text-transform: uppercase;
           }
 
           &__link {
-               display: block;
+                display: block;
                 width: 44px;
                 height: 44px;
                 position: absolute;
-               top: -22px;
-        background-color: $white--light;
+                top: -22px;
+                background-color: $white--light;
            }
+
+           &--latrinalia {
+                background: url('/../../assets/images/projekt-latrinalia.jpg');
+            }
+
+            &--segelteam {
+                 background: url('/../../assets/images/projekt-segelteam.jpg');
+             }
     }
 
     .main-section-project:nth-child(even) {
@@ -152,11 +202,9 @@
 
 
 
-        .project-link {
+        .main-section-project-link {
              left: -22px;
          }
-
-
      }
 
     .main-section-project:nth-child(odd) {
@@ -165,19 +213,26 @@
             margin-right: auto;
         margin-left: 0;
 
-    @media screen and (min-width: $mq-900) {
-        margin-left: auto;
-        margin-right: auto;
-    }
-         }
+        @media screen and (min-width: $mq-900) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+             }
 
-
-
-        .project-link {
+        .main-section-project-link {
              right: -22px;
+
+            @media screen and (min-width: $mq-1100){
+                right: 0;
+                left: -22px;
+            }
 
             &__icon {
                  transform: scaleX(-1);
+
+                @media screen and (min-width: $mq-1100){
+                    transform: scaleX(1);
+                }
              }
          }
     }
@@ -186,14 +241,29 @@
         margin-bottom: 0;
     }
 
-    .project-link {
+    .main-section-project-link {
+        cursor: pointer;
+        box-shadow: 1px 1px 7px transparentize($black--light, .75);
         &__icon {
-        fill: $primary-color--dark;
+        fill: $primary-color--light;
         position: relative;
         left: 6px;
         top: 6px;
              width: 32px;
              height: 32px;
          }
+
+            &--inactive {
+            cursor: default;
+            svg {
+                fill: $grey--light;
+            }
+        }
+
+        &:hover {
+            animation: swing 1s;
+         }
     }
+
+
 </style>

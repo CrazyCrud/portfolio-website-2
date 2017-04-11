@@ -26,7 +26,7 @@
                         </a></li>
                 </ul>
             </div>
-            <div class="main-footer__logo">
+            <div class="main-footer__logo main-footer-logo">
                 (☞ﾟ∀ﾟ)☞
             </div>
         </div>
@@ -175,6 +175,14 @@
         &__link {
              color: $footer-link-color;
              text-decoration: none;
+         }
+    }
+
+    .main-footer-logo {
+        cursor: default;
+        user-select: none;
+        &:hover {
+             animation: bounce 1s;
          }
     }
 </style>

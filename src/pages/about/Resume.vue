@@ -31,7 +31,6 @@
                 <div class="resume-section__content resume-section-content">
                     <div class="resume-section-content__copy">
                         <h5 class="resume-section__degree">Freiberuflicher Webentwickler</h5>
-                        <span class="resume-section__place"></span>
                         <p class="resume-section__copy">Ich untersützte die Universitätsbibliothek Regensburg bei einigen Projekten</p>
                     </div>
                     <div class="resume-section-content__date">
@@ -87,10 +86,14 @@
         media: "(min-width: #{$mq-1200})"
     );
 
+    .resume {
+         font-size: 1rem;
+    }
+
     .resume-section {
         @include grid-container;
 
-        margin-bottom: modular-scale(4);
+        margin-bottom: modular-scale(2);
 
         @include grid-media($grid--resume--desktop) {
             margin-left: -20px;
@@ -119,6 +122,10 @@
 
         &__headline {
             margin-top: 0;
+            margin-bottom: modular-scale(1);
+             $unitless: modular-scale(1)/1em;
+             font-size: $unitless + rem;
+            font-weight: 300;
          }
 
         &__content {
@@ -132,19 +139,33 @@
             margin-top: 0;
         margin-bottom: modular-scale(-2);
             text-transform: uppercase;
+             // $unitless: modular-scale(-1, 1em)/1em;
+             font-size: modular-scale(1) - modular-scale(-3);
+             margin-bottom: 0;
+            font-weight: 300;
          }
 
          &__place {
-                color: $grey--light;
+                color: $grey--medium;
+              display: inline-block;
+              margin-top: modular-scale(-3);
+                font-size: modular-scale(1) - modular-scale(-3);
           }
 
           &__copy {
-
+                margin-top: modular-scale(-2);
+                line-height: 1.5;
            }
 
-           &__place, &__copy {
-                font-size: modular-scale(-1);
-                      }
+           &__date {
+                display: inline-block;
+                margin-top: modular-scale(-3);
+                font-size: modular-scale(1) - modular-scale(-3);
+
+                @media screen and (min-width: $mq-1200) {
+                    text-align: center;
+                }
+            }
     }
 
     .resume-section-content {

@@ -46,7 +46,7 @@
     .main-header {
         &__content-container {
 
-             padding-top: modular-scale(6);
+             padding-top: modular-scale(4);
              margin-bottom: modular-scale(8);
 
             @media screen and (min-width: $mq-900) {
@@ -58,8 +58,18 @@
             position: relative;
             margin: 0 0 modular-scale(-1) 0;
             padding: modular-scale(-1) 0;
-            font-size: modular-scale(1) * 1.25;
+            $unitless: modular-scale(3)/1em;
+            font-size: $unitless + rem;
+            font-weight: 300;
         }
+
+         &__headline:after{
+            display: block;
+            content: '';
+            position: absolute;
+            bottom: 0;
+          }
+
          &__copy-container {
             margin: 0 - modular-scale(1);
             padding: modular-scale(-1) modular-scale(1);

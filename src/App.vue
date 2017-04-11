@@ -61,7 +61,8 @@
                 &__headline {
                      text-align: center;
                      font-size: modular-scale(2);
-                     margin-bottom: modular-scale(-1);
+                    font-weight: 300;
+                     margin-bottom: modular-scale(1);
                  }
             }
 

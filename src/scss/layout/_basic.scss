@@ -7,11 +7,11 @@ html {
   font-size: $font-size--xs;
 
   @media screen and (min-width: $mq-600) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media screen and (min-width: $mq-900) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media screen and (min-width: $mq-1200) {
@@ -24,7 +24,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: $bariol, sans-serif;
+  font-family: $open-sans, sans-serif;
+  color: $black;
+}
+
+h1, h2, h3 {
+  font-family: $varela, sans-serif;
+  color: $black--light;
 }
 
 .hide-me {

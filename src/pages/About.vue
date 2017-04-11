@@ -3,7 +3,7 @@
         <div class="about__content-container">
             <h3 class="page__headline about__headline">Was ich biete</h3>
             <skills class="about__section"></skills>
-            <h3 class="page__headline about__headline">Lebenslauf</h3>
+            <h3 class="page__headline about__headline">Curriculum Vitae</h3>
             <resume class="about__section"></resume>
             <h3 class="page__headline about__headline">Und sonst so</h3>
             <about-me class="about__section"></about-me>

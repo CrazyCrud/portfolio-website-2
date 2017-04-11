@@ -33,7 +33,7 @@
 
                             v-model="message"
                     ></ui-textbox>
-                    <ui-button class="contact-form__element" color="default" size="normal">{{submitButton}}</ui-button>
+                    <ui-button class="contact-form__element contact-form__submit" color="default" size="normal">{{submitButton}}</ui-button>
                 </form>
             </div>
         </div>
@@ -65,6 +65,8 @@
     @import "~bourbon/app/assets/stylesheets/bourbon";
     @import "~bourbon-neat/core/neat";
 
+    @import "../scss/base/all";
+
     .contact {
         &__content-container {
              max-width: 800px;
@@ -79,5 +81,14 @@
         &__element {
             margin-bottom: modular-scale(3) !important;
          }
+
+         &__submit {
+            margin-top: modular-scale(1.5);
+        width: 100%;
+
+            @media screen and (min-width: $mq-600) {
+                width: auto;
+            }
+          }
     }
 </style>

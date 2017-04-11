@@ -83,11 +83,19 @@
          }
 
         &__branding {
-             padding: .4rem .4rem;
-             background: black;
+             padding: .2rem .4rem;
+             border: 2px solid black;
+             background: $black;
+             transition: background-color 0.3s;
+             $unitless: modular-scale(-1)/1em;
+             font-size: $unitless + rem;
             a {
                 color: #9ee6cf !important;
             }
+
+            &:hover {
+                 background-color: $white--light;
+             }
         }
 
         &__icon {

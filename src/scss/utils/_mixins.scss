@@ -160,6 +160,7 @@
       padding: 2em 2em 3em 2em;
       text-decoration: none;
       transition: all 0.2s ease-in-out;
+      cursor: default;
 
       @for $i from 1 to 7 { // assign colors from $flex-box-top-colors list
         &:nth-child(#{$i}) {

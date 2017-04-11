@@ -21,7 +21,8 @@
 
     .about {
         &__me {
-
+            font-size: 1rem;
+            line-height: 1.5;
          }
     }
 
