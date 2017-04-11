@@ -12,18 +12,18 @@
                     </li>
                 </ul>
                 <ul class="main-footer__social main-footer-social">
-                    <li class="main-footer-social__item"><a href="javascript:void(0)">
-                        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+                    <li class="main-footer-social__item main-footer-social-item"><a href="javascript:void(0)">
+                        <svg class="main-footer-social-item__icon">
+                            <use xlink:href="#icon-linkedin"></use>
+                        </svg>
                     </a>
                     </li>
-                    <li class="main-footer-social__item"><a href="javascript:void(0)">
-                        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+                    <li class="main-footer-social__item main-footer-social-item"><a href="javascript:void(0)">
+                        <svg class="main-footer-social-item__icon main-footer-social-item-icon--xing">
+                            <use xlink:href="#icon-xing"></use>
+                        </svg>
                     </a>
                     </li>
-                    <li class="main-footer-social__item">
-                        <a href="javascript:void(0)">
-                            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
-                        </a></li>
                 </ul>
             </div>
             <div class="main-footer__logo main-footer-logo">
@@ -149,7 +149,7 @@
                  padding-right: 0;
              }
 
-            img {
+            svg {
                 height: 1.6em;
                 opacity: 0.7;
                 padding: 1px;
@@ -183,6 +183,18 @@
         user-select: none;
         &:hover {
              animation: bounce 1s;
+         }
+    }
+
+    .main-footer-social-item {
+        &__icon {
+            width: 1.6em;
+         }
+    }
+
+    .main-footer-social-item-icon {
+        &--xing {
+            width: 1.5em;
          }
     }
 </style>

@@ -73,10 +73,15 @@
          }
 
         &__headline {
+        position: relative;
             text-align: center;
             font-size: modular-scale(1);
             font-weight: 300;
             margin-bottom: modular-scale(-1);
+
+            &:before {
+
+             }
          }
     }
 </style>

@@ -4,7 +4,7 @@
             <h2 class="main-section__headline main-section-contact__headline">{{contactHeadline}}</h2>
             <p class="main-section-contact__copy">{{contactCopy}}</p>
             <router-link to="/kontakt" class="button-link">
-                <ui-button color="default" size="normal">{{contactButton}}</ui-button>
+                <ui-button class="main-section-contact__button" color="default" size="normal">{{contactButton}}</ui-button>
             </router-link>
         </div>
     </section>
@@ -20,7 +20,7 @@
             return {
                 contactHeadline: 'Kontakt',
                 contactCopy: `Lassen Sie uns über Ihr Projekt sprechen oder erzählen Sie mir ihren besten Witz.`,
-                contactButton: 'Kontaktieren Sie mich'
+                contactButton: 'Lassen Sie uns reden'
             }
         }
     }
@@ -36,12 +36,24 @@
     .main-section-contact {
         &__copy {
             margin-bottom: 0;
+             max-width: $mq-1200;
          }
+
+         &__button {
+            &:hover {
+                 animation: tada 1s;
+             }
+          }
+
+    &__content-container {
+        max-width: none;
+     }
     }
 
     .main-section {
+
+
         &__contact-container {
-             max-width: $mq-600;
             margin: 0 auto;
          }
     }

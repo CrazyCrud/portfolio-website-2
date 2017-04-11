@@ -1,8 +1,8 @@
 <template>
     <header class="main-header">
         <div class="main-header__content-container main-section__content-container">
-            <h1 class="main-header__headline main-header-headline">{{headerGreeting}}<span class="main-header-headline__name">{{headerName}}</span>.</br>
-                {{headerSkills}}
+            <h1 class="main-header__headline main-header-headline"><span class="main-header-headline__name">UX &</span></br>
+                Webdesign
             </h1>
             <div class="main-header__copy-container">
                 <p class="main-header__copy">{{headerCopy}}</p>
@@ -22,8 +22,6 @@
         components: {UiButton},
         data: function() {
             return {
-                headerGreeting: `Hallo, ich bin `,
-                headerName: `Constantin`,
                 headerSkills: `Ich designe Webseiten und Apps.`,
                 headerCopy: `Ich designe Anwendungen, die nutzbar sind und Spaß machen.
                     Vom Design, Programmieren und Testen mit echten Nutzern übernehme ich alles was ihr Produkt benötigt.`,

@@ -137,8 +137,8 @@
              max-width: 80%;
              height: 260px;
             padding: modular-scale(1) modular-scale(2);
-             color: $black--light;
-             background-color: $primary-color--light;
+             color: $white;
+             background-color: $primary-color--medium;
             display: flex;
             flex-direction: column;
              justify-content: space-between;

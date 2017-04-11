@@ -2,10 +2,12 @@
     <div class="page projects">
         <div class="projects__content-container projects-content-container">
             <div class="projects-content-container__copy projects-content-container-copy">
-                Hier könnte </br><span class="projects-content-container-copy__animated-container animated rollIn"><span class="projects-content-container-copy__highlight">Ihr</span></span> Projekt stehen
+                There will be <span class="projects-content-container-copy__animated-container"><span class="projects-content-container-copy__highlight">Work</span></span>
             </div>
             <div class="projects-content-container__ps projects-content-container-ps">
-                <span class="projects-content-container-ps__content">..hoffentlich bald</span>
+                <router-link to="/kontakt" class="button-link">
+                    <ui-button class="projects-content-container-ps__button" color="default" size="normal">{{contactButton}}</ui-button>
+                </router-link>
             </div>
         </div>
         <main-footer>
@@ -14,11 +16,17 @@
 </template>
 
 <script>
+    import UiButton from 'keen-ui/lib/UiButton';
     import MainFooter from '../components/Footer.vue';
 
     export default {
         name: 'project',
-        components: {MainFooter},
+        components: {UiButton, MainFooter},
+        data: function() {
+            return {
+                contactButton: 'Lassen Sie uns über Ihr Projekt reden'
+            }
+        }
     }
 </script>
 
@@ -46,6 +54,7 @@
     .projects-content-container {
         &__copy {
             text-align: center;
+             margin-bottom: modular-scale(4);
          }
 
          &__ps {
@@ -57,11 +66,12 @@
 
     .projects-content-container-copy {
         &__highlight {
-            color: $secondary-color--light;
-            display: inline-block;
-            font-size: modular-scale(2);
-             font-family: $pacifico;
-        transform: rotate(-6deg) scale(1.25);
+            // color: $secondary-color--light;
+            //display: inline-block;
+            //font-size: modular-scale(3) - modular-scale(-4);
+             //font-family: $pacifico;
+        //font-weight: 100;
+        //transform: rotate(-6deg) scale(1.1);
             z-index: 10;
          }
 
@@ -76,6 +86,14 @@
             padding: modular-scale(-2) modular-scale(-1);
         border: 3px solid $primary-color--light;
          }
+
+         &__button {
+
+
+            &:hover {
+                 animation: tada 1s;
+             }
+          }
     }
 
 </style>
