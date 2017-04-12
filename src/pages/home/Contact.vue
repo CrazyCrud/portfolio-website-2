@@ -19,7 +19,7 @@
         data: function() {
             return {
                 contactHeadline: 'Kontakt',
-                contactCopy: `Lassen Sie uns über Ihr Projekt sprechen oder erzählen Sie mir ihren besten Witz.`,
+                contactCopy: `Lassen Sie uns über Ihr Projekt sprechen oder empfehlen Sie mir Ihre Lieblingsmusik.`,
                 contactButton: 'Lassen Sie uns reden'
             }
         }

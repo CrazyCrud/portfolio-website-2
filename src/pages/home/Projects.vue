@@ -10,9 +10,11 @@
                         <div v-for="(project, index) in projects" class="main-section-project" v-bind:class="project.classAttr">
                             <div class="main-section-project__content-container main-section-project-content-container hide-me">
                                 <div class="main-section-project__link main-section-project-link" v-bind:class="{ 'main-section-project-link--inactive': !project.active }">
-                                    <svg class="link-icon main-section-project-link__icon">
-                                        <use xlink:href="#icon-follow--left"></use>
-                                    </svg>
+                                    <a :href="project.link" target="_blank">
+                                        <svg class="link-icon main-section-project-link__icon">
+                                            <use xlink:href="#icon-follow--left"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                                 <h5 class="main-section-project__title">{{project.title}}</h5>
                                 <p class="main-section-project__copy">{{project.copy}}</p>
@@ -43,14 +45,16 @@
                         classAttr: 'main-section-project--latrinalia',
                         title: 'Latrinalia',
                         type: 'Web-Development',
-                        copy: 'Someday is not a fucking day of the week. Why are you fucking reading all of this? Get back to.',
-                        active: false
+                        link: 'http://www.sueddeutsche.de/bayern/forschungsobjekt-toilette-kritzeleien-an-der-klotueren-1.1949629',
+                        copy: 'Die responsive Web-App ermöglicht das Hochladen, Bewerten und Kommentieren von Bildern über Toiletten-Grafiti.',
+                        active: true
                     },
                     {
                         classAttr: 'main-section-project--segelteam',
                         title: 'Segelteam',
                         type: 'Web-Development',
-                        copy: 'Someday is not a fucking day of the week. Why are you fucking reading all of this? Get back to.',
+                        link: 'http://seoul-way-7442.pancakeapps.com/',
+                        copy: 'Die Umsetzung eines Designs zu einer imaginären Seite, das auf allen Geräten ansprechend aussieht.',
                         active: true
                     }
                 ]
@@ -100,6 +104,7 @@
              top: -181px;
              height: 300px;
         z-index: 1;
+        pointer-events: none;
          }
 
 
@@ -130,6 +135,8 @@
         background-size: cover;
         padding-top: modular-scale(2);
         padding-bottom: modular-scale(1);
+
+
 
         &__content-container {
             box-sizing: border-box;
@@ -186,6 +193,8 @@
             &--segelteam {
                  background: url('/../../assets/images/projekt-segelteam.jpg');
              }
+
+
     }
 
     .main-section-project:nth-child(even) {
@@ -213,6 +222,7 @@
             margin-right: auto;
         margin-left: 0;
 
+
         @media screen and (min-width: $mq-900) {
             margin-left: auto;
             margin-right: auto;
@@ -235,6 +245,15 @@
                 }
              }
          }
+    }
+
+    .main-section-project-content-container {
+        transition: all 0.2s;
+
+    &:hover {
+        transform: scale(1.005);
+        box-shadow: 1px 1px 5px transparentize($black, 0.2);
+     }
     }
 
     .main-section-project:last-of-type {

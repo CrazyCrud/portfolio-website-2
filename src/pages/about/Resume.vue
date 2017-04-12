@@ -6,21 +6,15 @@
                 <div class="resume-section__content resume-section-content">
                     <div class="resume-section-content__copy">
                         <h5 class="resume-section__degree">Master of Science Medieninformatik</h5>
-                        <span class="resume-section__place">Universität Regensburg</span>
-                        <p class="resume-section__copy">Im Master nahm ich an Vorlesungen und Projekten zu Projektmanagement, Interaktionstechnologien sowie interaktive Information- und Assistenzsysteme teil</p>
-                    </div>
-                    <div class="resume-section-content__date">
-                        <span class="resume-section__date">Abschluss 2016</span>
+                        <div class="resume-section__place">Universität Regensburg, 2016</div>
+                        <p class="resume-section__copy">Der Master <em>Medienformatik</em> beinhaltete Vorlesungen und Projektarbeiten zu Interaktionstechnologien, interaktive Information- und Assistenzsysteme und Projektmanagement.</p>
                     </div>
                 </div>
                 <div class="resume-section__content resume-section-content">
                     <div class="resume-section-content__copy">
                         <h5 class="resume-section__degree">Bachelor of Arts Medieninformatik & Informationswissenschaft</h5>
-                        <span class="resume-section__place">Universität Regensburg</span>
-                        <p class="resume-section__copy">Webentwicklung, Usability & User-Experience Design waren Schwerpunkte des Bachelor-Studiums</p>
-                    </div>
-                    <div class="resume-section-content__date">
-                        <span class="resume-section__date">Abschluss 2014</span>
+                        <span class="resume-section__place">Universität Regensburg, 2014</span>
+                        <p class="resume-section__copy">Im Bachelor <em>Medienformatik</em> wurden Kurse zu Software- und Webentwicklung sowie Usability Engineering & User-Experience Design angeboten.</p>
                     </div>
                 </div>
             </div>
@@ -31,20 +25,22 @@
                 <div class="resume-section__content resume-section-content">
                     <div class="resume-section-content__copy">
                         <h5 class="resume-section__degree">Freiberuflicher Webentwickler</h5>
-                        <p class="resume-section__copy">Ich untersützte die Universitätsbibliothek Regensburg bei einigen Projekten</p>
-                    </div>
-                    <div class="resume-section-content__date">
-                        <span class="resume-section__date">Bis heute</span>
+                        <span class="resume-section__place">Bis heute</span>
+                        <p class="resume-section__copy">Ich untersützte die <em>Universitätsbibliothek</em> Regensburg bei Projekten zur Neugestaltung der Webpräsenz.</p>
                     </div>
                 </div>
                 <div class="resume-section__content resume-section-content">
                     <div class="resume-section-content__copy">
                         <h5 class="resume-section__degree">Webentwickler</h5>
-                        <span class="resume-section__place">myposter GmbH</span>
-                        <p class="resume-section__copy">Bei der Firma myposter war ich als Webentwickler eingestellt</p>
+                        <div class="resume-section__place">myposter GmbH, März 2017</div>
+                        <p class="resume-section__copy">Bei der Firma <a href="http://myposter.de/" target="_blank">myposter</a> war ich als Webentwickler tätig.</p>
                     </div>
-                    <div class="resume-section-content__date">
-                        <span class="resume-section__date">Bis März 2017</span>
+                </div>
+                <div class="resume-section__content resume-section-content">
+                    <div class="resume-section-content__copy">
+                        <a class="resume-section-content__link-file" href="./static/bewerbung_resume.pdf" target="_blank">
+                            <ui-button class="resume-section__button" color="default" size="normal">{{resumeButton}}</ui-button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -53,8 +49,16 @@
 </template>
 
 <script>
+    import UiButton from 'keen-ui/lib/UiButton';
+
     export default {
-        name: 'resume'
+        name: 'resume',
+        components: {UiButton},
+        data: function() {
+            return {
+                resumeButton: 'Lebenslauf herunterladen'
+            }
+        }
     }
 </script>
 
@@ -102,6 +106,9 @@
     }
 
     .resume-section {
+    &__button {
+        margin-top: modular-scale(3);
+     }
         &__headline-container, &__content-container {
             @include grid-column(1, $grid--resume);
          }
@@ -132,17 +139,15 @@
             @include grid-collapse($grid-resumme__content);
             @include grid-container($grid-resumme__content);
 
-            margin-bottom: modular-scale(1);
+            margin-bottom: modular-scale(3) - modular-scale(-4);
          }
 
         &__degree {
             margin-top: 0;
-        margin-bottom: modular-scale(-2);
+            margin-bottom: modular-scale(-2);
             text-transform: uppercase;
-             // $unitless: modular-scale(-1, 1em)/1em;
              font-size: modular-scale(1) - modular-scale(-3);
              margin-bottom: 0;
-            font-weight: 300;
          }
 
          &__place {
@@ -153,8 +158,9 @@
           }
 
           &__copy {
-                margin-top: modular-scale(-2);
+                margin-top: modular-scale(-1);
                 line-height: 1.5;
+                font-size: modular-scale(1) - modular-scale(-3);
            }
 
            &__date {
@@ -173,9 +179,17 @@
             @include grid-column(1, $grid-resumme__content);
 
             @include grid-media($grid-resumme__content--desktop) {
-                @include grid-column(2);
+                @include grid-column(3);
             }
          }
+
+    &__link-file{
+        text-decoration: none;
+
+        &:visited {
+             text-decoration: none;
+         }
+     }
 
          &__date {
             color: $grey--medium;

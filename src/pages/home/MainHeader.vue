@@ -1,8 +1,8 @@
 <template>
     <header class="main-header">
         <div class="main-header__content-container main-section__content-container">
-            <h1 class="main-header__headline main-header-headline"><span class="main-header-headline__name">UX &</span></br>
-                Webdesign
+            <h1 class="main-header__headline main-header-headline"><span class="main-header-headline__ux">UX </span>&</br>
+                <span class="main-header-headline__web">Webdesign</span>.
             </h1>
             <div class="main-header__copy-container">
                 <p class="main-header__copy">{{headerCopy}}</p>
@@ -56,7 +56,7 @@
             position: relative;
             margin: 0 0 modular-scale(-1) 0;
             padding: modular-scale(-1) 0;
-            $unitless: modular-scale(3)/1em;
+            $unitless: (modular-scale(4) - modular-scale(-4))/1em;
             font-size: $unitless + rem;
             font-weight: 300;
         }
@@ -80,8 +80,19 @@
     }
 
     .main-header-headline {
-        &__name {
+        font-weight: 300;
+            &__ux, &__web {
+                letter-spacing: .1em;
+                font-family: $open-sans;
+                font-weight: 300;
+            }
+        &__ux {
+
 
          }
+
+         &__web {
+
+          }
     }
 </style>

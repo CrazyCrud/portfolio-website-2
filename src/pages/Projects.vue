@@ -1,9 +1,9 @@
 <template>
     <div class="page projects">
         <div class="projects__content-container projects-content-container">
-            <div class="projects-content-container__copy projects-content-container-copy">
+            <h2 class="projects-content-container__copy projects-content-container-copy">
                 There will be <span class="projects-content-container-copy__animated-container"><span class="projects-content-container-copy__highlight">Work</span></span>
-            </div>
+            </h2>
             <div class="projects-content-container__ps projects-content-container-ps">
                 <router-link to="/kontakt" class="button-link">
                     <ui-button class="projects-content-container-ps__button" color="default" size="normal">{{contactButton}}</ui-button>

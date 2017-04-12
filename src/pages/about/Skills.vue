@@ -1,30 +1,25 @@
 <template>
     <div class="about__skills skills">
         <div class="flex-boxes">
-            <a href="javascript:void(0)" class="flex-box flex-box-big">
+            <a href="javascript:void(0)" class="flex-box">
                 <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
                 <h1 class="flex-title">Webdesign</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad nostrum, libero! Laborum distinctio necessitatibus voluptates eaque officiis, unde illo, earum voluptatum rerum, reiciendis ipsa ex dolorem a dicta, maxime aliquam.</p>
+                <p>Ihre Ideen sollen individuell ohne Baukasten-Verfahren umgesetzt werden. Dinge wie die Performanz und eine angenehme Bedienbarkeit auf allen Geräten stehen dabei im Vordergrund.</p>
             </a>
             <a href="javascript:void(0)" class="flex-box">
                 <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
                 <h1 class="flex-title">SEO</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quis ipsum, officia, aperiam tenetur dolor molestiae voluptate perferendis dolorem vel ex, unde fugit blanditiis sapiente.</p>
+                <p>Strukturierter Inhalte und eindeutige Schlüsselwörter helfen Ihrer Seite durch Suchmaschinen gefunden zu werden.</p>
             </a>
             <a href="javascript:void(0)" class="flex-box flex-box-big">
                 <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
                 <h1 class="flex-title">Usability & UX</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
+                <p>Zwischen Ihrer Anwendung und dem Nutzer soll eine persönliche Beziehung entstehen. Dazu gehört eine intuitive Bedienung, sinnvolle Informationsstruktur und Liebe zum Detail.</p>
             </a>
             <a href="javascript:void(0)" class="flex-box">
                 <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
-                <h1 class="flex-title">Product Design</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo obcaecati in provident illo.</p>
-            </a>
-            <a href="javascript:void(0)" class="flex-box">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
-                <h1 class="flex-title">Interfac Design</h1>
-                <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+                <h1 class="flex-title">UI-Design</h1>
+                <p>Zur Gestaltung von Anwendungen gehört ein übersichtliches Layout, ein gelungenes Zusammenspiel von Farben und die Wahl passender Schriftarten.</p>
             </a>
         </div>
     </div>

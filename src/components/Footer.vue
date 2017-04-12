@@ -13,15 +13,19 @@
                 </ul>
                 <ul class="main-footer__social main-footer-social">
                     <li class="main-footer-social__item main-footer-social-item"><a href="javascript:void(0)">
-                        <svg class="main-footer-social-item__icon">
-                            <use xlink:href="#icon-linkedin"></use>
-                        </svg>
+                        <a href="https://www.linkedin.com/in/constantin-lehenmeier-74684a101/" target="_blank">
+                            <svg class="main-footer-social-item__icon">
+                                <use xlink:href="#icon-linkedin"></use>
+                            </svg>
+                        </a>
                     </a>
                     </li>
                     <li class="main-footer-social__item main-footer-social-item"><a href="javascript:void(0)">
-                        <svg class="main-footer-social-item__icon main-footer-social-item-icon--xing">
-                            <use xlink:href="#icon-xing"></use>
-                        </svg>
+                        <a href="https://www.xing.com/profile/Constantin_Lehenmeier?" target="_blank">
+                            <svg class="main-footer-social-item__icon main-footer-social-item-icon--xing">
+                                <use xlink:href="#icon-xing"></use>
+                            </svg>
+                        </a>
                     </a>
                     </li>
                 </ul>
