@@ -3,7 +3,7 @@
         <div class="contact__content-container">
             <h3 class="page__headline contact__headline">Kontakt</h3>
             <div class="contact__form-container contact-form-container">
-                <form class="contact-form">
+                <form class="contact-form" v-on:submit.prevent="onSubmit>
                     <ui-textbox
                             class="contact-form__element"
                             required
@@ -55,7 +55,13 @@
                 mail: '',
                 name: '',
                 message: '',
-                submitButton: 'Absenden'
+                submitButton: 'Absenden',
+                formSubmitted: false
+            }
+        },
+        methods: {
+            onSubmit: function(event) {
+                
             }
         }
     }

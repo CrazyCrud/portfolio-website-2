@@ -187,11 +187,11 @@
            }
 
            &--latrinalia {
-                background: url('/../../assets/images/projekt-latrinalia.jpg');
+                background: url('/static/projekt-latrinalia.jpg');
             }
 
             &--segelteam {
-                 background: url('/../../assets/images/projekt-segelteam.jpg');
+                 background: url('/static/projekt-segelteam.jpg');
              }
 
 

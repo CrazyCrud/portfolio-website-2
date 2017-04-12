@@ -40,7 +40,6 @@
         },
         watch: {
           '$route': function(newRoute, oldRoute) {
-              console.log("route has changed");
               this.isOpen = false;
           }
         },
@@ -119,6 +118,9 @@
         z-index: 100;
         background-color: $white;
         transition: all 0.2s;
+
+    @include breakpoint(small) { display: none; };
+
         &--opened {
             left: 0;
          }
