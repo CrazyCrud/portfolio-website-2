@@ -6,7 +6,7 @@
             </h2>
             <div class="projects-content-container__ps projects-content-container-ps">
                 <router-link to="/kontakt" class="button-link">
-                    <ui-button class="projects-content-container-ps__button" color="default" size="normal">{{contactButton}}</ui-button>
+                    <ui-button class="projects-content-container-ps__button" color="default" size="large">{{contactButton}}</ui-button>
                 </router-link>
             </div>
         </div>

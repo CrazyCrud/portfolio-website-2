@@ -248,12 +248,7 @@
     }
 
     .main-section-project-content-container {
-        transition: all 0.2s;
-
-    &:hover {
-        transform: scale(1.005);
         box-shadow: 1px 1px 5px transparentize($black, 0.2);
-     }
     }
 
     .main-section-project:last-of-type {
