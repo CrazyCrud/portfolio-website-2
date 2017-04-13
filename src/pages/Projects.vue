@@ -1,9 +1,12 @@
 <template>
     <div class="page projects">
         <div class="projects__content-container projects-content-container">
-            <h2 class="projects-content-container__copy projects-content-container-copy">
-                There will be <span class="projects-content-container-copy__animated-container"><span class="projects-content-container-copy__highlight">Work</span></span>
+            <h2 class="projects-content-container__copy-headline projects-content-container-copy">
+                There will be <span class="projects-content-container-copy__animated-container"><span class="projects-content-container-copy__highlight">work</span></span>
             </h2>
+            <h5 class="projects-content-container__copy-subheadline">
+                ...eventually
+            </h5>
             <div class="projects-content-container__ps projects-content-container-ps">
                 <router-link to="/kontakt" class="button-link">
                     <ui-button class="projects-content-container-ps__button" color="default" size="large">{{contactButton}}</ui-button>
@@ -52,10 +55,22 @@
     }
 
     .projects-content-container {
-        &__copy {
+        &__copy-headline {
             text-align: center;
-             margin-bottom: modular-scale(4);
+             margin-bottom: modular-scale(-2);
          }
+
+         &__copy-subheadline {
+            text-align: center;
+            font-family: $pacifico;
+            font-weight: 100;
+            font-size: modular-scale(1);
+              margin-bottom: modular-scale(4);
+
+            @media screen and (min-width: $mq-1200) {
+                margin-bottom: modular-scale(6);
+            }
+          }
 
          &__ps {
             margin-top: modular-scale(3);
