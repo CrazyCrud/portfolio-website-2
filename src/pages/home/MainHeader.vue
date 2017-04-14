@@ -1,8 +1,8 @@
 <template>
     <header class="main-header">
         <div class="main-header__content-container main-section__content-container">
-            <h1 class="main-header__headline main-header-headline"><span class="main-header-headline__ux">UX </span>&</br>
-                <span class="main-header-headline__web">Webdesign</span>.
+            <h1 class="main-header__headline main-header-headline"><span class="main-header-headline__ux">Webdesign </span>&</br>
+                <span class="main-header-headline__web">User Experience</span>.
             </h1>
             <div class="main-header__copy-container">
                 <p class="main-header__copy">{{headerCopy}}</p>

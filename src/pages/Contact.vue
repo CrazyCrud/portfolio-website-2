@@ -9,7 +9,7 @@
                             :invalid="!isValidMail"
                             class="contact-form__element"
                             floating-label
-                            label="E-Mail"
+                            label="E-Mail *"
                             placeholder="Ihre E-Mail Adresse"
                             v-model="email">
                     </ui-textbox>
@@ -110,9 +110,15 @@
                 });
 
                 request.done((response, textStatus, jqXHR) => {
-                    this.formSubmitted = true;
-                    this.warningAlert = this.errorAlert = false;
-                    this.successAlert = true;
+                    if(response.state == 'error') {
+                        this.formSubmitted = false;
+                        this.successAlert = this.warningAlert = false;
+                        this.errorAlert = true;
+                    } else {
+                        this.formSubmitted = true;
+                        this.warningAlert = this.errorAlert = false;
+                        this.successAlert = true;
+                    }
                 });
 
                 request.fail((jqXHR, textStatus, errorThrown) => {

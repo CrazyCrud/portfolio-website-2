@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 
 include_once 'default.inc.php';
 
-$email = $message = false;
+$email =  false;
 if(isset($_POST['email']) && !empty($_POST['email'])){
 	$email = htmlentities($_POST['email']);
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -12,11 +12,13 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
 	}
 }
 
+$message = "";
 if(isset($_POST['message']) && !empty($_POST['message'])){
 	$message = htmlentities($_POST['message']);
 }
 
-if($email != false && $message != false){
+
+if($email != false){
 	$message = "Von $email \n".$message;
 	if(mail($me, "Portfolio - Request", $message, null, "-f ".$email)){
 		echo json_encode(array('state' => 'success'));

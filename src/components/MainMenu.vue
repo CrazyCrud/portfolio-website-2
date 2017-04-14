@@ -136,6 +136,14 @@
 
             .main-menu-item {
                 margin-top: modular-scale(2);
+
+                a {
+                    color: $black;
+                    text-decoration: none;
+                    &:visited {
+                        text-decoration: none;
+                     }
+                }
             }
          }
 

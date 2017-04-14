@@ -109,8 +109,8 @@
 
 
         &__projects-container {
-            @include grid-container;
-         @include grid-collapse($grid-projects);
+            //@include grid-container;
+         //@include grid-collapse($grid-projects);
             @include grid-media($grid-projects--tablet-up) {
                 @include grid-collapse($grid-projects--tablet-up);
             }

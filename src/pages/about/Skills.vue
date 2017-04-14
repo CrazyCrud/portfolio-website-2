@@ -2,22 +2,25 @@
     <div class="about__skills skills">
         <div class="flex-boxes skills__skills-container skills-container">
             <a href="javascript:void(0)" class="flex-box skills-container__skill skill">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
+                <!--
+                <svg class="skill__icon">
+                    <use xlink:href="#icon-homepage"></use>
+                </svg>-->
                 <h1 class="flex-title skill__title">Webdesign</h1>
                 <p class="skill_text">Ihre Ideen sollen individuell ohne Baukasten-Verfahren umgesetzt werden. Dinge wie die Performanz und eine angenehme Bedienbarkeit auf allen Geräten stehen dabei im Vordergrund.</p>
             </a>
             <a href="javascript:void(0)" class="flex-box skills-container__skill skill">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
+                <!--<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">-->
                 <h1 class="flex-title skill__title">Search Engine Optimization</h1>
                 <p>Strukturierter Inhalte und eindeutige Schlüsselwörter helfen Ihrer Seite durch Suchmaschinen gefunden zu werden.</p>
             </a>
             <a href="javascript:void(0)" class="flex-box skills-container__skill skill">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
-                <h1 class="flex-title skill__title">Usability & UX</h1>
-                <p>Zwischen Ihrer Anwendung und dem Nutzer soll eine persönliche Beziehung entstehen. Dazu gehört eine intuitive Bedienung, sinnvolle Informationsstruktur und Liebe zum Detail.</p>
+                <!--<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">-->
+                <h1 class="flex-title skill__title">Usability & User Experience</h1>
+                <p>Zwischen Ihrer Anwendung und dem Nutzer soll eine persönliche Beziehung entstehen. Dazu gehört ein nutzerzentriertes Design und Liebe zum Detail.</p>
             </a>
             <a href="javascript:void(0)" class="flex-box skills-container__skill skill">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
+                <!--<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">-->
                 <h1 class="flex-title skill__title">UI-Design</h1>
                 <p>Zur Gestaltung von Anwendungen gehört ein übersichtliches Layout, ein gelungenes Zusammenspiel von Farben und die Wahl passender Schriftarten.</p>
             </a>
@@ -77,8 +80,9 @@
 
         &__title {
              color: rgba(29, 29, 29, 0.7);
-             font-size: 1.2em;
+             //font-size: 1.2em;
              margin-bottom: 0.5em;
+            font-size: modular-scale(1);
          }
 
          &__text {
@@ -86,6 +90,11 @@
               line-height: 1.5em;
               margin: auto;
           }
+
+          &__icon {
+                width: 32px;
+                height: 32px;
+           }
     }
 
 </style>
